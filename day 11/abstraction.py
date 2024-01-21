@@ -21,5 +21,5 @@ samsung=Mobile()
 samsung.run("Mobile legend")
 asus=Laptop()
 asus.run("valorant")
-asus.run("pubggi")
+asus.run("chrome")
 
