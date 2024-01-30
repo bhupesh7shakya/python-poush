@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+nav > .search {
+    justify-content: flex-end;
+}
+
+nav > .search > input {
+    display: inline;
+}
+
+.margin-down {
+    margin-bottom: 20px;
+}

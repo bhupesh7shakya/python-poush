@@ -1,0 +1,57 @@
+{% extends 'blueprint/base.html' %}
+{% block title %} Listings {% endblock %}
+{% block body %}
+{% if search %}
+<a href="/" class="btn btn-primary">Return to Listings</a>
+{% endif %}
+<table class="table table-sm margin-down">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Completed</td>
+      <td>{{ task_status.total_completed }}</td>
+    </tr>
+    <tr>
+      <td>Pending</td>
+      <td>{{ task_status.total_incomplete}}</td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td> <b>{{ task_status.total_task }}</b></td>
+    </tr>
+</table>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for data_row in data %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        {% if data_row.status %}
+        <td><strike>{{ data_row.title }}</strike></td>
+        <td><strike>{{ data_row.description }}</strike></td>
+        <td class="text-success"> <b>Completed</b> </td>
+        {% else %}
+        <td>{{ data_row.title }}</td>
+        <td>{{ data_row.description }}</td>
+        <td class="text-danger"> <b>Pending</b> </td>
+        {% endif %}
+        <td><a href="change/{{ data_row.id }}" class="btn btn-primary">Change Status</a></td>
+        <td><a href="edit/{{data_row.id }}" class="btn btn-warning">Edit</a></td>
+        <td><a href="delete/{{ data_row.id }}" class="btn btn-danger">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
