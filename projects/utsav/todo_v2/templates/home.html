@@ -4,7 +4,9 @@
 {% if search %}
 <a href="/" class="btn btn-primary">Return to Listings</a>
 {% endif %}
-<table class="table table-sm margin-down">
+{% if not search %}
+<h2>Statistics</h2>
+<table class="table table-sm">
   <thead>
     <tr>
       <th>Type</th>
@@ -25,6 +27,9 @@
       <td> <b>{{ task_status.total_task }}</b></td>
     </tr>
 </table>
+<div class="space"></div>
+{% endif %}
+<h2>Todo items</h2>
 <table class="table table-sm">
     <thead>
       <tr>

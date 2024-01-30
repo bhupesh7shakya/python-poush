@@ -9,10 +9,10 @@ nav > .search {
     justify-content: flex-end;
 }
 
-nav > .search > input {
+nav div {
     display: inline;
 }
 
-.margin-down {
-    margin-bottom: 20px;
+.space {
+    height: 7em;
 }
