@@ -2,7 +2,7 @@
 {% block title %} Listings {% endblock %}
 {% block body %}
 {% if search %}
-<a href="/" class="btn btn-primary">Return to Listings</a>
+<a href="{% url 'home' %}" class="btn btn-primary">Return to Listings</a>
 {% endif %}
 {% if not search %}
 <h2>Statistics</h2>
@@ -52,9 +52,9 @@
         <td>{{ data_row.description }}</td>
         <td class="text-danger"> <b>Pending</b> </td>
         {% endif %}
-        <td><a href="change/{{ data_row.id }}" class="btn btn-primary">Change Status</a></td>
-        <td><a href="edit/{{data_row.id }}" class="btn btn-warning">Edit</a></td>
-        <td><a href="delete/{{ data_row.id }}" class="btn btn-danger">Delete</a></td>
+        <td><a href="{% url 'change' data_row.id %}" class="btn btn-primary">Change Status</a></td>
+        <td><a href="{% url 'edit' data_row.id %}" class="btn btn-warning">Edit</a></td>
+        <td><a href="{% url 'delete'  data_row.id %}" class="btn btn-danger">Delete</a></td>
       </tr>
       {% endfor %}
     </tbody>
