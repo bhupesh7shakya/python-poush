@@ -1,8 +1,8 @@
 <nav>
-    <a href="/"><ul>Listings</ul></a>
-    <a href="/insert"><ul>Insert</ul></a>
+    <a href="{% url 'home' %}"><ul>Listings</ul></a>
+    <a href="{% url 'insert' %}"><ul>Insert</ul></a>
     <span class="search">
-        <form method="GET" action="/">
+        <form method="GET" action="{% url 'home' %}">
             {{ search_form }}
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
