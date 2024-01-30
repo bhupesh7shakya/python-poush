@@ -4,7 +4,7 @@ from .forms import *
 
 def get_task(pk = None, all = False):
     if all:
-        return Task.objects.all()
+        return Task.objects.all().order_by('-id')
     else:
         return Task.objects.get(pk = pk)
 
